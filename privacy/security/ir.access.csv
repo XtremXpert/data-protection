@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+read,Permission to read activities,privacy.activity,group_data_protection_user,r,
+write,Permission to write activities,privacy.activity,group_data_protection_manager,crud,

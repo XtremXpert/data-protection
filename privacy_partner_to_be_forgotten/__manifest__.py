@@ -3,7 +3,7 @@
 
 {
     "name": "Privacy Partner's Right to be Forgotten",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "development_status": "Beta",
     "category": "Data Protection",
     "summary": "Anonymize partner data for GDPR compliance",
@@ -13,7 +13,7 @@
     "depends": ["contacts"],
     "data": [
         "security/security.xml",
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "views/res_partner_views.xml",
         "wizards/partner_anonymize_wizard_views.xml",
     ],

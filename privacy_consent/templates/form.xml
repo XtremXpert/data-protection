@@ -12,11 +12,11 @@
                 <div class="jumbotron">
                     <h1>Thank you!</h1>
                     <p>
-                        Hello, <b t-esc="consent.partner_id.display_name" />
+                        Hello, <b t-out="consent.partner_id.display_name" />
                     </p>
                     <p>
                         We asked you to authorize us to process your data in this data processing activity:
-                        <b t-esc="consent.activity_id.display_name" />
+                        <b t-out="consent.activity_id.display_name" />
                     </p>
                     <div t-field="consent.activity_id.description" />
                     <p t-if="consent.accepted">

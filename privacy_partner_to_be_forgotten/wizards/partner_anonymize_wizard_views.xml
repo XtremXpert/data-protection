@@ -35,7 +35,7 @@
                         <field name="email" />
                         <field name="phone" />
                         <field name="parent_id" />
-                        <field name="company_type" />
+                        <field name="is_company" />
                     </list>
                 </field>
                 <footer>

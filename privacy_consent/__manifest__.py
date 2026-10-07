@@ -4,7 +4,7 @@
     "name": "Privacy - Consent",
     "summary": "Allow people to explicitly accept or reject inclusion "
     "in some activity, GDPR compliant",
-    "version": "19.0.1.0.0",
+    "version": "20.0.1.0.0",
     "development_status": "Production/Stable",
     "category": "Privacy",
     "website": "https://github.com/OCA/data-protection",
@@ -14,7 +14,7 @@
     "installable": True,
     "depends": ["privacy"],
     "data": [
-        "security/ir.model.access.csv",
+        "security/ir.access.csv",
         "data/ir_actions_server.xml",
         "data/ir_cron.xml",
         "data/mail.xml",

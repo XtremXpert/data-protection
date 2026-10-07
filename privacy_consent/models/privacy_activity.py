@@ -140,4 +140,5 @@ class PrivacyActivity(models.Model):
             "res_model": consents._name,
             "type": "ir.actions.act_window",
             "view_mode": "list,form",
+            "views": [(False, "list"), (False, "form")],  # requis par Odoo 20
         }

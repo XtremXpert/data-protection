@@ -221,7 +221,7 @@ class ActivityFlow(ActivityCase):
         self.assertNotIn(reject_url, messages.body)
         # Visit tokenized accept URL
         self.authenticate("portal", "portal")
-        http.root.session_store.save(self.session)
+        http.session.session_store().save(self.session)
         result = self.url_open(accept_url).text
         self.assertIn("accepted", result)
         self.assertIn(reject_url, result)

@@ -12,7 +12,7 @@
                     invisible="not consent_required"
                     class="oe_stat_button"
                     context='{"search_default_activity_id": id}'
-                    icon="fa-handshake-o"
+                    icon="handshake"
                     name="%(consent_action)d"
                     type="action"
                 >
@@ -28,7 +28,7 @@
                             <button
                                 invisible="consent_required != 'manual'"
                                 class="btn-link"
-                                icon="fa-user-plus"
+                                icon="person_add"
                                 name="action_new_consents"
                                 type="object"
                                 string="Generate missing draft consent requests"
@@ -36,7 +36,7 @@
                             <button
                                 invisible="consent_required != 'auto'"
                                 class="btn-link"
-                                icon="fa-user-plus"
+                                icon="person_add"
                                 name="action_new_consents"
                                 type="object"
                                 string="Generate and enqueue missing consent requests"

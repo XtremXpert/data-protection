@@ -1,0 +1,3 @@
+id,name,model_id,group_id/id,operation,domain
+privacy_consent_read,Permission to read consents,privacy.consent,privacy.group_data_protection_user,r,
+privacy_consent_write,Permission to write consents,privacy.consent,privacy.group_data_protection_manager,crud,

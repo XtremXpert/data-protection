@@ -72,7 +72,7 @@ class PrivacyConsent(models.Model):
 
     def _token(self):
         """Secret token to publicly authenticate this record."""
-        secret = self.env["ir.config_parameter"].sudo().get_param("database.secret")
+        secret = self.env["ir.config_parameter"].sudo().get_str("database.secret")
         params = (
             f"{self.env.cr.dbname}-{self.id}-{self.partner_id.id}-{self.activity_id.id}"
         )

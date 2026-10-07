@@ -13,7 +13,7 @@
                     class="oe_stat_button"
                     context='{"search_default_partner_id": id}'
                     groups="privacy.group_data_protection_user"
-                    icon="fa-handshake-o"
+                    icon="handshake"
                     name="%(consent_action)d"
                     type="action"
                 >
