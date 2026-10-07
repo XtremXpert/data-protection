@@ -61,14 +61,14 @@ class PrivacyConsent(models.Model):
     def _creation_subtype(self):
         return self.env.ref("privacy_consent.mt_consent_consent_new")
 
-    def _track_subtype(self, init_values):
+    def _track_log_get_default_subtype(self, track_init_values):
         """Return specific subtypes."""
         self.ensure_one()
         if self.env.context.get("subject_answering"):
             return self.env.ref("privacy_consent.mt_consent_acceptance_changed")
-        if "state" in init_values:
+        if "state" in track_init_values:
             return self.env.ref("privacy_consent.mt_consent_state_changed")
-        return super()._track_subtype(init_values)
+        return super()._track_log_get_default_subtype(track_init_values)
 
     def _token(self):
         """Secret token to publicly authenticate this record."""

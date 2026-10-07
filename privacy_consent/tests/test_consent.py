@@ -280,14 +280,16 @@ class ActivityFlow(ActivityCase):
             }
         )
         # Case 1: Change in state
-        subtype = consent._track_subtype({"state": "approved"})
+        subtype = consent._track_log_get_default_subtype({"state": "approved"})
         self.assertEqual(
             subtype,
             self.env.ref("privacy_consent.mt_consent_state_changed"),
             "Subtype must be 'mt_consent_state_changed' when state is changed.",
         )
         # Case 2: Context subject_answering activated
-        subtype = consent.with_context(subject_answering=True)._track_subtype({})
+        subtype = consent.with_context(
+            subject_answering=True
+        )._track_log_get_default_subtype({})
         self.assertEqual(
             subtype,
             self.env.ref("privacy_consent.mt_consent_acceptance_changed"),
@@ -296,9 +298,11 @@ class ActivityFlow(ActivityCase):
         )
         # Case 3: Without any of the conditions
         with patch.object(
-            type(consent), "_track_subtype", return_value="super_subtype"
+            type(consent),
+            "_track_log_get_default_subtype",
+            return_value="super_subtype",
         ) as mock_super:
-            subtype = consent._track_subtype({})
+            subtype = consent._track_log_get_default_subtype({})
             mock_super.assert_called_once_with({})
             self.assertEqual(
                 subtype,

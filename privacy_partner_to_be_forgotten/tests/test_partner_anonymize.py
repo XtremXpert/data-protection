@@ -172,14 +172,11 @@ class TestPartnerAnonymize(TransactionCase):
             }
         )
 
-        cls.env["ir.model.access"].create(
+        cls.env["ir.access"].create(
             {
                 "name": "access_res_partner_full",
                 "model_id": cls.env.ref("base.model_res_partner").id,
-                "perm_read": True,
-                "perm_write": True,
-                "perm_create": True,
-                "perm_unlink": True,
+                "operation": "crud",
                 "group_id": cls.env.ref(
                     "privacy_partner_to_be_forgotten.group_partner_anonymize"
                 ).id,
