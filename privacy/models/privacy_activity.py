@@ -13,37 +13,32 @@ class PrivacyActivity(models.Model):
         default=True,
         index=True,
     )
-
     name = fields.Char(
         index=True,
         required=True,
         translate=True,
     )
-
     description = fields.Html(
         translate=True, help="How is personal data used here? Why? Etc."
     )
-
     controller_id = fields.Many2one(
         comodel_name="res.partner",
         string="Controller",
         required=True,
         default=lambda self: self._default_controller_id(),
-        help="Whoever determines the purposes and means of the processing of personal data.",
+        help="Whoever determines the purposes and means of the processing "
+        "of personal data.",
     )
-
     processor_ids = fields.Many2many(
         comodel_name="res.partner",
         relation="privacy_activity_res_partner_processor_ids",
         string="Processors",
         help="Whoever processes personal data on behalf of the controller.",
     )
-
     subject_find = fields.Boolean(
         string="Define subjects",
         help="Are affected subjects present in this database?",
     )
-
     subject_domain = fields.Char(
         string="Subjects filter",
         default="[]",
@@ -54,10 +49,3 @@ class PrivacyActivity(models.Model):
     def _default_controller_id(self):
         """By default it should be the current user's company."""
         return self.env.user.company_id.partner_id
-
-    # Constraints add to replace views attrs required
-    @api.constrains('subject_find', 'subject_domain')
-    def _check_subject_domain(self):
-        for rec in self:
-            if rec.subject_find and not rec.subject_domain:
-                raise ValidationError(_("Subjects filter is required when Define subjects is set to True"))

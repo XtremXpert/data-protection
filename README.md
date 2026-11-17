@@ -17,7 +17,13 @@ TODO: add repo description.
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[privacy](privacy/) | 17.0.1.0.0 |  | Provides data privacy and protection features to comply to regulations, such as GDPR.
+[privacy_consent](privacy_consent/) | 17.0.1.0.1 |  | Allow people to explicitly accept or reject inclusion in some activity, GDPR compliant
+[privacy_partner_to_be_forgotten](privacy_partner_to_be_forgotten/) | 17.0.1.0.0 |  | Anonymize partner data for GDPR compliance
 
 [//]: # (end addons)
 
