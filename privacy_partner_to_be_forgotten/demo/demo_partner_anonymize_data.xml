@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <odoo noupdate="1">
     <!-- Test Partners -->
     <record id="partner_company_sodasopa" model="res.partner">
@@ -60,54 +60,75 @@
         <field name="country_id" ref="base.us" />
         <field name="function">Student</field>
     </record>
+
     <!-- Test Users -->
-    <record id="user_company_sodasopa" model="res.users" context="{'no_reset_password': True}">
+    <record
+        id="user_company_sodasopa"
+        model="res.users"
+        context="{'no_reset_password': True}"
+    >
         <field name="partner_id" ref="partner_company_sodasopa" />
         <field name="login">sodasopa</field>
         <field name="password">sodasopa</field>
         <field name="name">Sodasopa</field>
         <field name="email">info@sodasopa.com</field>
-        <field name="group_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="group_ids" eval="[Command.link(ref('base.group_user'))]" />
         <field name="action_id" ref="mail.action_discuss" />
     </record>
 
-    <record id="user_eric_cartman" model="res.users" context="{'no_reset_password': True}">
+    <record
+        id="user_eric_cartman"
+        model="res.users"
+        context="{'no_reset_password': True}"
+    >
         <field name="partner_id" ref="partner_eric_cartman" />
         <field name="login">eric</field>
         <field name="password">eric</field>
         <field name="name">Eric Cartman</field>
         <field name="email">eric@sodasopa.com</field>
-        <field name="group_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="group_ids" eval="[Command.link(ref('base.group_user'))]" />
         <field name="action_id" ref="mail.action_discuss" />
     </record>
 
-    <record id="user_butters_stotch" model="res.users" context="{'no_reset_password': True}">
+    <record
+        id="user_butters_stotch"
+        model="res.users"
+        context="{'no_reset_password': True}"
+    >
         <field name="partner_id" ref="partner_butters_stotch" />
         <field name="login">butters</field>
         <field name="password">butters</field>
         <field name="name">Butters Stotch</field>
         <field name="email">butters@sodasopa.com</field>
-        <field name="group_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="group_ids" eval="[Command.link(ref('base.group_user'))]" />
         <field name="action_id" ref="mail.action_discuss" />
     </record>
 
-    <record id="user_kenny_mccormick" model="res.users" context="{'no_reset_password': True}">
+    <record
+        id="user_kenny_mccormick"
+        model="res.users"
+        context="{'no_reset_password': True}"
+    >
         <field name="partner_id" ref="partner_kenny_mccormick" />
         <field name="login">kenny</field>
         <field name="password">kenny</field>
         <field name="name">Kenny McCormick</field>
         <field name="email">kenny@sodasopa.com</field>
-        <field name="group_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="group_ids" eval="[Command.link(ref('base.group_user'))]" />
         <field name="action_id" ref="mail.action_discuss" />
     </record>
 
-    <record id="user_stanley_marsh" model="res.users" context="{'no_reset_password': True}">
+    <record
+        id="user_stanley_marsh"
+        model="res.users"
+        context="{'no_reset_password': True}"
+    >
         <field name="partner_id" ref="partner_stanley_marsh" />
         <field name="login">stan</field>
         <field name="password">stan</field>
         <field name="name">Stanley Marsh</field>
         <field name="email">stan@sp.com</field>
-        <field name="group_ids" eval="[(4, ref('base.group_user'))]" />
+        <field name="group_ids" eval="[Command.link(ref('base.group_user'))]" />
         <field name="action_id" ref="mail.action_discuss" />
     </record>
 </odoo>

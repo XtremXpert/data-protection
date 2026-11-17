@@ -8,6 +8,10 @@
         <field name="binding_model_id" ref="base.model_res_partner" />
         <field name="binding_view_types">form,list</field>
         <field
+            name="group_ids"
+            eval="[Command.link(ref('privacy_partner_to_be_forgotten.group_partner_anonymize'))]"
+        />
+        <field
             name="context"
         >{'default_partner_ids': active_ids, 'active_test': False}</field>
     </record>
